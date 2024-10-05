@@ -1,26 +1,39 @@
 {
-  "name": "fincance-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.14"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.14"
-  }
+	"name": "fincance-app",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"test": "jest",
+		"test:int": "npx playwright test"
+	},
+	"dependencies": {
+		"framer-motion": "^11.11.1",
+		"jose": "^5.9.3",
+		"next": "14.2.14",
+		"react": "^18",
+		"react-dom": "^18",
+		"tailwind-merge": "^2.5.3",
+		"tanstack-query": "^1.0.0",
+		"zustand": "^5.0.0-rc.2"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.47.2",
+		"@testing-library/dom": "^10.4.0",
+		"@testing-library/jest-dom": "^6.5.0",
+		"@testing-library/react": "^16.0.1",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"eslint": "^8",
+		"eslint-config-next": "14.2.14",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
+		"postcss": "^8",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5"
+	}
 }
