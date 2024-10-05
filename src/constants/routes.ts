@@ -1,6 +1,6 @@
 import { Route } from "@/types/types";
 
-export const routes: Route = {
+export const ROUTES: Route = {
 	DASHBOARD: {
 		title: "Dashboard",
 		href: "/",
