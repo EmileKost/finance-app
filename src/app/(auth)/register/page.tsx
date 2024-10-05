@@ -2,7 +2,7 @@ import { RegisterForm } from "@/components/auth/RegisterForm";
 
 export default function Register() {
 	return (
-		<div>
+		<div className="w-full">
 			<RegisterForm />
 		</div>
 	);
