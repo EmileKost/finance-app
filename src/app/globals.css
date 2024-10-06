@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-	h2 {
-		/* @apply  */
+	h1 {
+		@apply text-3xl md:text-5xl;
 	}
 }
