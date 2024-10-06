@@ -1,10 +1,16 @@
 "use server";
 
-import { sql } from "@vercel/postgres";
+import { db } from "@vercel/postgres";
 
-// TODO: Fix types
 export const signup = async (formData: FormData) => {
 	if (!formData) return;
+
+	try {
+		const client = await db.connect();
+		if (client) console.log("DB connected");
+	} catch (err) {
+		console.log(err);
+	}
 
 	console.log(formData);
 };
@@ -12,7 +18,7 @@ const emails = ["test@test"];
 export const login = async (formData: FormData) => {
 	if (!formData) return;
 
-	const email = formData.get("email");
+	// const email = formData.get("email");
 };
 
 // This is a server action

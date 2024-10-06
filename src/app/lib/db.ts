@@ -1,8 +1,13 @@
 import { db } from "@vercel/postgres";
 
 async function connectToDb() {
-	const client = await db.connect();
-	await client.sql`SELECT 1`;
+	try {
+		const client = await db.connect();
+		await client.sql`SELECT 1`;
+		console.log("DB Connected");
+	} catch (err) {
+		console.log(err);
+	}
 }
 
 connectToDb();
