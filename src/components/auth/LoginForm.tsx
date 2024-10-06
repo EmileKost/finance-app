@@ -1,11 +1,10 @@
-"use server";
 import { login } from "@/app/actions/authentication";
 
 export const LoginForm = () => (
 	<div className="flex flex-col gap-12">
 		<h2 className="text-white-primary text-2xl md:text-5xl">Login</h2>
 		<form
-			method="GET"
+			method="POST"
 			action={login}
 			className="max-w-[650px] flex flex-col gap-4 md:gap-8">
 			<div className="flex flex-col gap-1">

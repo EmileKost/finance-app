@@ -1,24 +1,28 @@
 "use server";
 
-import { db } from "@vercel/postgres";
+import { db, sql } from "@vercel/postgres";
 
 export const signup = async (formData: FormData) => {
 	if (!formData) return;
 
+	const user = {
+		name: formData.get("name"),
+		username: formData.get("username"),
+		email: formData.get("email"),
+		password: formData.get("password"),
+	};
+	const name = "test";
+
 	try {
-		const client = await db.connect();
-		if (client) console.log("DB connected");
+		await sql`INSERT INTO "users" (name, username, email, password) VALUES (${name}, ${user.username}, ${user.email}, ${user.password})`;
+		console.log("User succesfully added");
 	} catch (err) {
 		console.log(err);
 	}
-
-	console.log(formData);
 };
-const emails = ["test@test"];
+
 export const login = async (formData: FormData) => {
 	if (!formData) return;
-
-	// const email = formData.get("email");
 };
 
 // This is a server action
