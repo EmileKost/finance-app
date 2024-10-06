@@ -19,7 +19,7 @@ export const LoginForm = () => (
 					name="email"
 					id="email"
 					placeholder="Email"
-					className="border-b border-white-primary pb-0.5 bg-transparent"
+					className="border-b border-white-primary pb-0.5 bg-transparent placeholder-current"
 				/>
 			</div>
 			<div className="flex flex-col gap-1">
@@ -33,7 +33,7 @@ export const LoginForm = () => (
 					name="password"
 					id="password"
 					placeholder="Password"
-					className="border-b border-white-primary pb-0.5 bg-transparent"
+					className="border-b border-white-primary pb-0.5 bg-transparent placeholder-current"
 				/>
 			</div>
 			<button type="submit">Log in</button>
