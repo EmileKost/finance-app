@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { TheHeaderAuthentication } from "./__components/TheHeaderAuthentication";
+import { TheHeaderAuthentication } from "../../components/TheHeaderAuthentication";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
 	return (
