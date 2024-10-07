@@ -15,7 +15,7 @@ export const signup = async (formData: FormData) => {
 		password: formData.get("password"),
 	};
 
-	const user = validateUserCredentials(userInput);
+	const user = await validateUserCredentials(userInput);
 
 	console.log(user);
 };

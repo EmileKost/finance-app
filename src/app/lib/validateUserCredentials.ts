@@ -30,11 +30,12 @@ export const validateUserCredentials = async (user: User) => {
 		password: encryptedPassword as FormDataEntryValue,
 	};
 
-	return validatedUser;
+	return {
+		validatedUser,
+		status: { succes: true, message: "User succesfully validated" },
+	};
 };
 
 const hashPassword = async (password: string) => {
-	if (!password) return;
-
 	return await bcrypt.hash(password, 10);
 };
