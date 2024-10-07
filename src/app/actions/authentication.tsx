@@ -2,35 +2,27 @@
 
 import { db, sql } from "@vercel/postgres";
 
-export const signup = async (formData: FormData) => {
-	if (!formData) return;
+import { User } from "@/types/types";
+import { validateUserCredentials } from "../lib/validateUserCredentials";
 
-	const user = {
+export const signup = async (formData: FormData) => {
+	if (!formData) throw new Error("Error: Required fields are missing");
+
+	const userInput: User = {
 		name: formData.get("name"),
 		username: formData.get("username"),
 		email: formData.get("email"),
 		password: formData.get("password"),
 	};
-	const name = "test";
 
-	try {
-		await sql`INSERT INTO "users" (name, username, email, password) VALUES (${name}, ${user.username}, ${user.email}, ${user.password})`;
-		console.log("User succesfully added");
-	} catch (err) {
-		console.log(err);
-	}
+	const user = validateUserCredentials(userInput);
+
+	console.log(user);
 };
 
 export const login = async (formData: FormData) => {
 	if (!formData) return;
 };
 
-// This is a server action
-// - Make API call to DB here and send the appropriate RES to user back
-// TODO: Make connection with DB (postgres)
-
-// Psuedo
-// - if !formData return
-// - Check if email exists and check if valid, if so throw error
-// - else create form object
-// - Save to DB
+// TODO: Fix postgress shizzle
+// await sql`INSERT INTO "users" (name, username, email, password) VALUES (${user.name}, ${user.username}, ${user.email}, ${user.password})`;
